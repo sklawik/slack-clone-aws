@@ -25,11 +25,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let isUserAuthenticated = true;
 
-
-
-  let isUserAuthenticated = true
-  
   return (
     <html lang="en">
       <body
@@ -37,16 +34,32 @@ export default function RootLayout({
       >
         <div className="sm:ml-96 sm:mr-96 p-4 text-xl flex flex-col gap-0.5">
           <div>Slack Clone AWS</div>
-          <div className="text-sm flex flex-row gap-2">
-            <div>You are signed in as JohnDoe</div>
-            <div className="bg-red-500 text-black text-xs px-4 py-0.5 border border-black hover:bg-red-400 cursor-pointer">Sign out</div>
+          <div className="text-sm flex flex-row">
+            {isUserAuthenticated && (
+              <div className="flex flex-row gap-2">
+                <div>You are signed in as JohnDoe</div>
+                <div className="bg-red-500 text-black text-xs px-4 py-0.5 border border-black hover:bg-red-400 cursor-pointer">
+                  Sign out
+                </div>
+              </div>
+            )}
           </div>
-        
         </div>
-        <div className="sm:ml-96 sm:mr-96 grow overflow-y-scroll max-h-full">{isUserAuthenticated? <Dashboard/> :  children}</div>
+        <div className="sm:ml-96 sm:mr-96 grow overflow-y-scroll max-h-full">
+          {isUserAuthenticated ? <Dashboard /> : children}
+        </div>
         <div className="sm:ml-96 sm:mr-96 flex flex-col p-1 ">
-          <div>Slack Clone built with NextJS (frontend), NodeJS (backend), and AWS technologies.</div>
-          <Link  target="_blank" className="underline px-4 py-1 " href="https://github.com/sklawik/slack-clone-aws">See the project on Github</Link>
+          <div>
+            Slack Clone built with NextJS (frontend), NodeJS (backend), and AWS
+            technologies.
+          </div>
+          <Link
+            target="_blank"
+            className="underline px-4 py-1 "
+            href="https://github.com/sklawik/slack-clone-aws"
+          >
+            See the project on Github
+          </Link>
         </div>
       </body>
     </html>
