@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-svh w-full `}
       >
-        {children}
+        <div className="sm:ml-96 sm:mr-96 p-2 text-xl">Slack Clone AWS</div>
+        <div className="sm:ml-96 sm:mr-96 grow ">{children}</div>
+        <div className="sm:ml-96 sm:mr-96 flex flex-col ">
+          <div>Slack Clone using NextJS, NodeJS and AWS technologies.</div>
+          <Link className="underline px-4 py-1 " href="https://github.com/sklawik/slack-clone-aws">Github</Link>
+        </div>
       </body>
     </html>
   );
