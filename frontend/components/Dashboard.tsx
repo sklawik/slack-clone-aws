@@ -24,6 +24,7 @@ export default function Dashboard() {
           </div>
           <div>CodersLab</div>
           <div className="text-stone-500">13/95 online</div>
+          <div className="ml-auto bg-slate-500 text-white px-6 rounded-lg">Join</div>
         </div>
         <div className="hover:bg-slate-100 dark:hover:bg-stone-900 w-full px-2 py-2 flex flex-row cursor-pointer gap-2">
           <div className="bg-yellow-500 px-1 py-0.5 text-sm min-w-24 text-center">

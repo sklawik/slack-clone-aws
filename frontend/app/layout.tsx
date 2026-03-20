@@ -55,7 +55,7 @@ export default function RootLayout({
           </div>
           <Link
             target="_blank"
-            className="underline px-4 py-1 "
+            className="underline text-blue-300 "
             href="https://github.com/sklawik/slack-clone-aws"
           >
             See the project on Github
